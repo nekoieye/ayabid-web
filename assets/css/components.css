@@ -1,0 +1,723 @@
+/* 컴포넌트 전용 스타일 */
+
+/* Time Badge 스타일 */
+.time-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.time-badge i {
+    margin-right: 5px;
+}
+
+/* 카드 스타일들 */
+.excel-card, .web-card {
+    background: white;
+    border: 2px solid var(--primary-blue);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.excel-card:hover, .web-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.excel-card .card-title, .web-card .card-title {
+    color: var(--primary-navy);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Contact 스타일들 */
+.contact-info {
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-item h5 {
+    margin-bottom: 5px;
+    color: var(--primary-navy);
+    font-weight: 600;
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+/* Tech Deep Card 스타일들 */
+.tech-deep-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primary-blue);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.tech-deep-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tech-deep-title {
+    color: var(--primary-navy);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.tech-deep-title i {
+    margin-right: 10px;
+    color: var(--primary-blue);
+}
+
+.tech-deep-content {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Price Card 스타일들 */
+.price-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-blue);
+}
+
+.price-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-navy));
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 18px 18px 0 0;
+}
+
+.price-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.price-original {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 1rem;
+}
+
+.price-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.price-body {
+    padding: 30px 20px;
+    flex: 1;
+}
+
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-features li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.price-features li i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.price-footer {
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Product Card 스타일들 - Store 컴포넌트용 */
+.product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.product-icon {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+}
+
+.product-card .badge {
+    z-index: 10;
+}
+
+.product-card .pricing h4 {
+    color: var(--primary-navy);
+    font-weight: 700;
+}
+
+/* Store 컴포넌트 전용 Feature List */
+.product-card .feature-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.product-card .feature-list li {
+    padding: 5px 0;
+    color: #495057;
+}
+
+/* Service Card 스타일들 */
+.service-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card-image {
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 0;
+}
+
+.service-card-content {
+    padding: 30px;
+}
+
+.service-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 15px;
+}
+
+.service-card-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Progress Container 스타일 */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 9999;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-navy));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Sitemap 스타일들 */
+.sitemap-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--light-gray);
+}
+
+.sitemap-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.sitemap-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.sitemap-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.sitemap-link:hover {
+    color: var(--primary-blue);
+    padding-left: 10px;
+}
+
+.sitemap-link:last-child {
+    border-bottom: none;
+}
+
+/* Sidebar 스타일 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1040;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: between;
+    align-items: center;
+}
+
+.sidebar-title {
+    margin: 0;
+    color: var(--primary-navy);
+    font-weight: 700;
+}
+
+.sidebar-content {
+    padding: 20px 0;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.sidebar-item:hover {
+    background: var(--primary-blue);
+    color: white;
+    padding-left: 30px;
+}
+
+.sidebar-item i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    color: var(--primary-blue);
+}
+
+.sidebar-item:hover i {
+    color: white;
+}
+
+.sidebar-item span {
+    font-weight: 500;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1039;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-toggle-btn:hover {
+    background: var(--primary-navy);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+/* 타임라인 스타일 */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 0;
+}
+
+.timeline-date {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.timeline-title {
+    margin-bottom: 0.5rem;
+    color: var(--primary-navy);
+}
+
+.timeline-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+/* 진행률 타임라인 스타일 */
+.progress-timeline .progress {
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.progress-timeline .progress-bar {
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+/* 통계 스타일 개선 */
+.stat-number {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* 기능 리스트 스타일 */
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.feature-list i {
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+/* 카드 높이 균등화 */
+.feature-card.h-100 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card.h-100 .feature-description {
+    flex-grow: 1;
+}
+
+/* Background Soft Colors */
+.bg-primary-soft {
+    background-color: rgba(33, 150, 243, 0.1) !important;
+}
+
+.bg-info-soft {
+    background-color: rgba(23, 162, 184, 0.1) !important;
+}
+
+.bg-warning-soft {
+    background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.bg-success-soft {
+    background-color: rgba(40, 167, 69, 0.1) !important;
+}
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Intersection Observer용 유틸리티 클래스 */
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
+.translate-y-0 {
+    transform: translateY(0);
+}
+
+/* Buy Product Button 스타일 */
+.buy-product-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.buy-product-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.buy-product-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* 반응형 개선 */
+@media (max-width: 768px) {
+    .tech-deep-card,
+    .price-card,
+    .product-card,
+    .service-card {
+        margin-bottom: 20px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .price-header {
+        padding: 20px 15px;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+    
+    .service-card-content {
+        padding: 20px;
+    }
+    
+    .sitemap-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .sidebar {
+        width: 280px;
+        right: -280px;
+    }
+    
+    .sidebar-toggle-btn {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+    }
+    
+    .sidebar-item {
+        padding: 12px 15px;
+    }
+    
+    .sidebar-item:hover {
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tech-deep-title {
+        font-size: 1.2rem;
+    }
+    
+    .service-card-title {
+        font-size: 1.2rem;
+    }
+    
+    .price-title {
+        font-size: 1.3rem;
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+    
+    .sitemap-page {
+        padding-top: 60px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .sidebar-toggle-btn {
+        right: 10px;
+    }
+}
+
+/* 접근성 개선 */
+.price-card:focus-within,
+.product-card:focus-within,
+.service-card:focus-within,
+.tech-deep-card:focus-within,
+.sitemap-section:focus-within {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* 프린트 스타일 */
+@media print {
+    .price-card,
+    .product-card,
+    .service-card,
+    .sitemap-section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .bg-primary-soft,
+    .bg-info-soft,
+    .bg-warning-soft,
+    .bg-success-soft {
+        background-color: #f8f9fa !important;
+    }
+    
+    .progress-container {
+        display: none;
+    }
+}
