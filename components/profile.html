@@ -1,0 +1,37 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <img src="assets/images/profile-avatar.png" alt="프로필 이미지" class="rounded-circle img-fluid" style="width: 150px;">
+                    <h3 class="my-3" id="profileName"></h3>
+                    <p class="text-muted mb-4" id="profileEmail"></p>
+                    <div class="d-flex justify-content-center mb-2">
+                        <button type="button" class="btn btn-primary me-2" id="editProfileBtn">프로필 수정</button>
+                        <button type="button" class="btn btn-outline-danger" id="logoutBtn">로그아웃</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4" id="profileInfo">
+                <!-- 프로필 정보가 이곳에 로드됩니다 -->
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">보유 상품</h5>
+                </div>
+                <div class="card-body" id="productList">
+                    <!-- 보유 상품 정보가 이곳에 로드됩니다 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+주석: 프로필 페이지는 로그인 사용자만 접근 가능하며,
+상품 구매시 보유현황에 표시됩니다. 엑셀, 파이썬은 패키지 상품으로 구매완료 및 최신버전 확인 버튼이 표시되고,
+웹 기반 서비스는 구독형으로 남은 기간이 표시됩니다. 모든 상품의 버전은 v0.0.2로 표시됩니다.
+-->

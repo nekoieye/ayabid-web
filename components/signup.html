@@ -1,0 +1,65 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0 rounded-lg">
+                <div class="card-header bg-white">
+                    <h2 class="text-center my-3">회원가입</h2>
+                </div>
+                <div class="card-body p-4 p-md-5">
+                    <form id="signupForm">
+                        <div class="mb-4">
+                            <label for="name" class="form-label">이름</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" id="name" placeholder="이름을 입력하세요" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">이메일</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" id="email" placeholder="이메일을 입력하세요" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">비밀번호</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력하세요" required>
+                            </div>
+                            <div class="form-text">
+                                비밀번호는 8자 이상, 영문자, 숫자, 특수문자를 포함해야 합니다.
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="passwordConfirm" class="form-label">비밀번호 확인</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                <input type="password" class="form-control" id="passwordConfirm" placeholder="비밀번호를 다시 입력하세요" required>
+                            </div>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                <a href="terms.html" target="_blank">이용약관</a>과 
+                                <a href="privacy.html" target="_blank">개인정보처리방침</a>에 동의합니다
+                            </label>
+                        </div>
+                        <div class="d-grid gap-2 mb-4">
+                            <button type="submit" class="btn btn-primary btn-lg">회원가입</button>
+                        </div>
+                        <div id="signupStatus"></div>
+                        <p class="text-center mt-4">
+                            이미 계정이 있으신가요? <a href="login.html" class="text-decoration-none fw-bold">로그인</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+주석: 임시로 아무 데이터나 입력해도 가입 성공으로 처리합니다.
+실제 구현 시에는 백엔드 API와 연동하여 사용자 유효성 검사 및 가입 처리를 해야 합니다.
+-->

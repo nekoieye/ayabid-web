@@ -1,0 +1,394 @@
+<div class="store-container">
+    <!-- 배경 애니메이션 요소 -->
+    <div class="animated-bg">
+        <div class="floating-bar"></div>
+        <div class="floating-bar"></div>
+        <div class="floating-bar"></div>
+        <div class="floating-bar"></div>
+    </div>
+
+    <div class="container py-5">
+        <!-- 스토어 헤더 -->
+        <div class="store-header">
+            <h1 class="store-title">AyaBid 스토어</h1>
+            <p class="store-subtitle">혁신적인 입찰 지원 솔루션을 경험하세요</p>
+        </div>
+
+        <!-- 탭 네비게이션 -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <ul class="nav nav-pills justify-content-center" id="productTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">
+                            <i class="bi bi-grid-3x3-gap me-2"></i>전체
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="package-tab" data-bs-toggle="pill" data-bs-target="#package" type="button" role="tab" aria-controls="package" aria-selected="false">
+                            <i class="bi bi-box-seam me-2"></i>패키지 상품
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="subscription-tab" data-bs-toggle="pill" data-bs-target="#subscription" type="button" role="tab" aria-controls="subscription" aria-selected="false">
+                            <i class="bi bi-arrow-repeat me-2"></i>구독 상품
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 제품 컨텐츠 -->
+        <div class="tab-content" id="productTabContent">
+            <!-- 전체 탭 -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+                <div class="row g-4" id="storeContainer">
+                    <!-- Excel 심플 예측 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                            <span class="product-badge badge-package">패키지</span>
+                            
+                            <div class="product-icon-area">
+                                <div class="product-icon excel-icon">
+                                    <i class="bi bi-file-earmark-excel"></i>
+                                </div>
+                                <h3 class="product-title">엑셀기반 심플 예측</h3>
+                                <div class="product-pricing">
+                                    <div class="product-price">20,000원</div>
+                                    <div class="product-period">일회성 구매</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-description">
+                                간단한 입력으로 빠르게 입찰 전략을 수립하는 엑셀 기반 솔루션
+                            </div>
+                            
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle-fill"></i>사용 편의성</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>빠른 예측 결과</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>오프라인 작동</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>사용 기한 없음</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>즉시 다운로드</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-footer">
+                                <button class="buy-product-btn" data-product-id="excel-simple" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+                                    <i class="bi bi-bag-check me-2"></i>구매하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python AI 학습형 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card popular" data-aos="fade-up" data-aos-delay="200">
+                            <span class="product-badge badge-popular">인기</span>
+                            
+                            <div class="product-icon-area">
+                                <div class="product-icon python-icon">
+                                    <i class="bi bi-robot"></i>
+                                </div>
+                                <h3 class="product-title">파이썬과엑셀 학습형 AI</h3>
+                                <div class="product-pricing">
+                                    <div class="product-price">120,000원</div>
+                                    <div class="product-period">일회성 구매</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-description">
+                                머신러닝과 딥러닝을 활용한 고도화된 입찰 예측 시스템
+                            </div>
+                            
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle-fill"></i>AI 머신러닝 알고리즘</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>학습형 예측 모델</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>고급 데이터 분석</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Python + Excel 연동</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>커스터마이징 가능</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-footer">
+                                <button class="buy-product-btn" data-product-id="python-excel-ai" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+                                    <i class="bi bi-rocket-takeoff me-2"></i>구매하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 웹 기반 솔루션 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                            <span class="product-badge badge-subscription">구독</span>
+                            
+                            <div class="product-icon-area">
+                                <div class="product-icon web-icon">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <h3 class="product-title">웹기반 통합 솔루션</h3>
+                                <div class="product-pricing">
+                                    <div class="product-price">50,000원</div>
+                                    <div class="product-period">월 구독</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-description">
+                                클라우드 기반 실시간 입찰 분석 및 전략 수립 플랫폼
+                            </div>
+                            
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle-fill"></i>실시간 데이터 분석</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>클라우드 기반</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>모바일 접근 가능</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>팀 협업 기능</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>24/7 지원</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-footer">
+                                <button class="buy-product-btn" data-product-id="web-based" data-bs-toggle="modal" data-bs-target="#subscriptionModal">
+                                    <i class="bi bi-cloud-check me-2"></i>구독하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 패키지 상품 탭 -->
+            <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab" tabindex="0">
+                <div class="row g-4">
+                    <!-- Excel 심플 예측 복사 -->
+                    <div class="col-lg-6">
+                        <div class="product-card" data-aos="fade-right">
+                            <span class="product-badge badge-package">패키지</span>
+                            
+                            <div class="product-icon-area">
+                                <div class="product-icon excel-icon">
+                                    <i class="bi bi-file-earmark-excel"></i>
+                                </div>
+                                <h3 class="product-title">엑셀기반 심플 예측</h3>
+                                <div class="product-pricing">
+                                    <div class="product-price">20,000원</div>
+                                    <div class="product-period">일회성 구매</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-description">
+                                간단한 입력으로 빠르게 입찰 전략을 수립하는 엑셀 기반 솔루션
+                            </div>
+                            
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle-fill"></i>사용 편의성</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>빠른 예측 결과</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>오프라인 작동</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>사용 기한 없음</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-footer">
+                                <button class="buy-product-btn" data-product-id="excel-simple" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+                                    <i class="bi bi-bag-check me-2"></i>구매하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python AI 학습형 복사 -->
+                    <div class="col-lg-6">
+                        <div class="product-card popular" data-aos="fade-left">
+                            <span class="product-badge badge-popular">인기</span>
+                            
+                            <div class="product-icon-area">
+                                <div class="product-icon python-icon">
+                                    <i class="bi bi-robot"></i>
+                                </div>
+                                <h3 class="product-title">파이썬과엑셀 학습형 AI</h3>
+                                <div class="product-pricing">
+                                    <div class="product-price">120,000원</div>
+                                    <div class="product-period">일회성 구매</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-description">
+                                머신러닝과 딥러닝을 활용한 고도화된 입찰 예측 시스템
+                            </div>
+                            
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle-fill"></i>AI 머신러닝 알고리즘</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>학습형 예측 모델</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>고급 데이터 분석</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Python + Excel 연동</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-footer">
+                                <button class="buy-product-btn" data-product-id="python-excel-ai" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+                                    <i class="bi bi-rocket-takeoff me-2"></i>구매하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 구독 상품 탭 -->
+            <div class="tab-pane fade" id="subscription" role="tabpanel" aria-labelledby="subscription-tab" tabindex="0">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="product-card" data-aos="zoom-in">
+                            <span class="product-badge badge-subscription">구독</span>
+                            
+                            <div class="product-icon-area">
+                                <div class="product-icon web-icon">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <h3 class="product-title">웹기반 통합 솔루션</h3>
+                                <div class="product-pricing">
+                                    <div class="product-price">50,000원</div>
+                                    <div class="product-period">월 구독</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-description">
+                                클라우드 기반 실시간 입찰 분석 및 전략 수립 플랫폼
+                            </div>
+                            
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle-fill"></i>실시간 데이터 분석</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>클라우드 기반 솔루션</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>모바일 접근 가능</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>팀 협업 기능</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>24/7 기술 지원</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>정기 업데이트</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-footer">
+                                <button class="buy-product-btn" data-product-id="web-based" data-bs-toggle="modal" data-bs-target="#subscriptionModal">
+                                    <i class="bi bi-cloud-check me-2"></i>구독하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 신뢰성 섹션 -->
+        <div class="row mt-5 pt-5">
+            <div class="col-12 text-center">
+                <h2 class="store-title" style="font-size: 2.5rem;">왜 AyaBid를 선택해야 할까요?</h2>
+                <p class="store-subtitle">수천 명의 사용자가 검증한 입찰 성공 솔루션</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-3">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card" style="text-align: center;">
+                    <div class="product-icon-area">
+                        <div class="product-icon" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52); width: 80px; height: 80px;">
+                            <i class="bi bi-trophy" style="font-size: 2rem;"></i>
+                        </div>
+                        <h4 class="product-title" style="font-size: 1.3rem;">95% 성공률</h4>
+                    </div>
+                    <div class="product-description">
+                        검증된 알고리즘으로 높은 입찰 성공률을 자랑합니다
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card" style="text-align: center;">
+                    <div class="product-icon-area">
+                        <div class="product-icon" style="background: linear-gradient(135deg, #4ecdc4, #44b3a4); width: 80px; height: 80px;">
+                            <i class="bi bi-speedometer2" style="font-size: 2rem;"></i>
+                        </div>
+                        <h4 class="product-title" style="font-size: 1.3rem;">5초 내 분석</h4>
+                    </div>
+                    <div class="product-description">
+                        빠른 처리 속도로 실시간 입찰 전략을 제공합니다
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card" style="text-align: center;">
+                    <div class="product-icon-area">
+                        <div class="product-icon" style="background: linear-gradient(135deg, #a8e6cf, #7fcdcd); width: 80px; height: 80px;">
+                            <i class="bi bi-shield-check" style="font-size: 2rem;"></i>
+                        </div>
+                        <h4 class="product-title" style="font-size: 1.3rem;">100% 보안</h4>
+                    </div>
+                    <div class="product-description">
+                        철저한 데이터 보안으로 안전한 입찰 환경을 제공합니다
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 구매 모달 -->
+<div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border);">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="purchaseModalLabel">상품 구매</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center text-white">
+                    <div class="product-icon" style="width: 100px; height: 100px; margin: 0 auto 20px;">
+                        <i class="bi bi-bag-check" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4>구매가 곧 가능합니다!</h4>
+                    <p class="mb-4">현재 결제 시스템을 준비 중입니다. 빠른 시일 내에 만나뵙겠습니다.</p>
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        사전 예약을 원하시면 연락주세요!
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary">연락하기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 구독 모달 -->
+<div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border);">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="subscriptionModalLabel">구독 서비스</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center text-white">
+                    <div class="product-icon web-icon" style="width: 100px; height: 100px; margin: 0 auto 20px;">
+                        <i class="bi bi-cloud-check" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4>구독 서비스 준비 중!</h4>
+                    <p class="mb-4">웹 기반 통합 솔루션이 곧 출시됩니다. 첫 달 무료 체험 혜택을 받아보세요!</p>
+                    <div class="alert alert-success">
+                        <i class="bi bi-gift me-2"></i>
+                        사전 가입시 첫 달 무료 + 30% 할인!
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary">사전 가입</button>
+            </div>
+        </div>
+    </div>
+</div>

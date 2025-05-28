@@ -1,0 +1,83 @@
+<!-- 배경 애니메이션 요소 -->
+<div class="animated-bg">
+    <div class="floating-bar"></div>
+    <div class="floating-bar"></div>
+    <div class="floating-bar"></div>
+    <div class="floating-bar"></div>
+</div>
+
+<!-- 네비게이션 -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <i class="bi bi-link-45deg me-2"></i>AyaBid
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">홈</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        서비스
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#excel-simple">엑셀기반 심플 예측</a></li>
+                        <li><a class="dropdown-item" href="#python-excel-ai">파이썬과엑셀 학습형 AI</a></li>
+                        <li><a class="dropdown-item" href="#web-based">웹 기반 입찰 프로그램</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#store">스토어</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">문의</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#login" id="loginNavLink">
+                        <i class="bi bi-person-circle me-1"></i>로그인
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 로그인 모달 -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">회원 로그인</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modalLoginForm">
+                    <div class="mb-3">
+                        <label for="loginEmailInput" class="form-label">이메일</label>
+                        <input type="email" class="form-control" id="loginEmailInput" placeholder="이메일 주소를 입력하세요">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPasswordInput" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="loginPasswordInput" placeholder="비밀번호를 입력하세요">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">로그인 상태 유지</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">로그인</button>
+                </form>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <a href="#signup" class="text-decoration-none">회원가입</a>
+                    <a href="#" class="text-decoration-none">비밀번호 찾기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
