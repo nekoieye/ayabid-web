@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아야비드 - AI 기반 입찰 예측 솔루션</title>
+    
+    <!-- SEO 메타태그 -->
+    <meta name="description" content="AI 기반 입찰 예측 솔루션 아야비드. 나라장터(G2B) 비공개복수예가 입찰의 성공률을 높입니다.">
+    <meta name="keywords" content="입찰 예측, AI, 비공개복수예가, 나라장터, G2B, 아야비드">
+    <meta name="author" content="아야비드">
+    
+    <!-- Open Graph 메타태그 -->
+    <meta property="og:title" content="아야비드 - AI 기반 입찰 예측 솔루션">
+    <meta property="og:description" content="나라장터(G2B) 비공개복수예가 입찰의 성공률을 높이는 AI 솔루션">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ayabid.com">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS 5.3.6 최신버전 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- 배경 애니메이션 요소 -->
+    <div class="animated-bg">
+        <div class="floating-bar"></div>
+        <div class="floating-bar"></div>
+        <div class="floating-bar"></div>
+        <div class="floating-bar"></div>
+    </div>
+
+    <!-- 페이지 로딩 진행 표시줄 -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Tab Navigation - test.html과 동일한 우측 탭 -->
+    <div class="tab-navigation">
+        <button class="tab-btn active" data-tab="home" data-tooltip="홈">
+            <i class="bi bi-house"></i>
+        </button>
+        <button class="tab-btn" data-tab="services" data-tooltip="서비스">
+            <i class="bi bi-grid-3x3-gap"></i>
+        </button>
+        <button class="tab-btn" data-tab="chat" data-tooltip="AI 상담">
+            <i class="bi bi-chat-dots"></i>
+        </button>
+        <button class="tab-btn" data-tab="contact" data-tooltip="연락처">
+            <i class="bi bi-telephone"></i>
+        </button>
+    </div>
+    
+    <!-- 헤더 영역 -->
+    <div id="header-container"></div>
+    
+    <!-- 메인 콘텐츠 영역 -->
+    <main id="main-content">
+        <!-- 동적으로 로드될 페이지 콘텐츠 -->
+        <div class="text-center p-5">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-3">초기화 중...</p>
+        </div>
+    </main>
+    
+    <!-- 푸터 영역 -->
+    <div id="footer-container"></div>
+
+    <!-- Chat Interface - test.html 풀스크린 스타일 -->
+    <div class="chat-interface" id="chatInterface">
+        <div class="chat-header">
+            <h3 class="chat-title">
+                <i class="bi bi-robot me-2"></i>AyaBid AI 어시스턴트
+            </h3>
+            <button class="chat-close" id="chatClose">
+                <i class="bi bi-x"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai">
+                안녕하세요! AyaBid AI 어시스턴트입니다. 입찰 관련 질문이나 서비스에 대해 궁금한 점이 있으시면 언제든 물어보세요! 😊
+                <div class="message-time">방금 전</div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <textarea 
+                    class="chat-input" 
+                    id="chatInput" 
+                    placeholder="메시지를 입력하세요..."
+                    rows="1"
+                ></textarea>
+                <button class="chat-send" id="chatSend">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 스크롤 맨 위로 버튼 -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 모듈들 순서대로 로드 -->
+    <script src="assets/js/modules/utils.js"></script>
+    <script src="assets/js/modules/ui.js"></script>
+    <script src="assets/js/modules/router.js"></script>
+    <script src="assets/js/modules/ai.js"></script>
+    
+    <!-- 메인 애플리케이션 -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/controller.js"></script>
+
+    <script>
+        // 문서가 로드된 후 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 파티클 시스템 초기화
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.width = particle.style.height = Math.random() * 4 + 2 + 'px';
+                particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                document.querySelector('.animated-bg').appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 20000);
+            }
+
+            // 파티클 생성 간격
+            setInterval(createParticle, 2000);
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createParticle, i * 1000);
+            }
+
+            // 진행률 표시
+            function updateProgressBar() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                document.getElementById('progressBar').style.width = scrollPercent + '%';
+            }
+
+            window.addEventListener('scroll', updateProgressBar);
+
+            // Tab Navigation 기능
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tab = this.getAttribute('data-tab');
+                    
+                    // 모든 버튼에서 active 클래스 제거
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 탭 액션 처리
+                    switch(tab) {
+                        case 'home':
+                            if (window.Router) {
+                                window.Router.navigate('home');
+                            } else {
+                                window.location.hash = 'home';
+                            }
+                            break;
+                        case 'chat':
+                            openChat();
+                            break;
+                        case 'services':
+                            if (window.Router) {
+                                window.Router.navigate('excel-simple');
+                            } else {
+                                window.location.hash = 'excel-simple';
+                            }
+                            break;
+                        case 'contact':
+                            if (window.Router) {
+                                window.Router.navigate('home#contact');
+                            } else {
+                                window.location.hash = 'home#contact';
+                            }
+                            break;
+                    }
+                });
+            });
+
+            // 채팅 기능
+            window.openChat = function() {
+                document.getElementById('chatInterface').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    const input = document.getElementById('chatInput');
+                    if (input) input.focus();
+                }, 300);
+            };
+
+            window.closeChat = function() {
+                document.getElementById('chatInterface').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            };
+
+            window.sendMessage = function() {
+                const input = document.getElementById('chatInput');
+                if (!input) return;
+                
+                const message = input.value.trim();
+                if (!message) return;
+                
+                // 사용자 메시지 추가
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // 타이핑 인디케이터 표시
+                showTypingIndicator();
+                
+                // AI 응답 시뮬레이션
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    const responses = [
+                        "입찰 예측 서비스에 대해 더 자세히 알려드릴까요? AyaBid는 AI 기반으로 95% 이상의 정확도를 자랑합니다.",
+                        "네, 좋은 질문이네요! 저희 시스템은 실시간으로 시장 데이터를 분석하여 최적의 입찰 전략을 제안합니다.",
+                        "AyaBid의 주요 장점은 정확한 예측, 실시간 분석, 그리고 24/7 지원입니다. 어떤 부분이 가장 궁금하신가요?",
+                        "무료 체험을 원하시면 언제든 신청하실 수 있습니다. 전문 컨설턴트가 직접 시연해드릴게요!",
+                        "입찰 성공률을 높이는 것이 목표라면 AyaBid가 최적의 선택입니다. 더 궁금한 점이 있으시면 말씀해주세요."
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'ai');
+                }, 1500);
+            };
+
+            function addMessage(text, sender) {
+                const messagesContainer = document.getElementById('chatMessages');
+                if (!messagesContainer) return;
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('ko-KR', { 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                });
+                
+                messageDiv.innerHTML = `
+                    ${text}
+                    <div class="message-time">${timeString}</div>
+                `;
+                
+                messagesContainer.appendChild(messageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                const messagesContainer = document.getElementById('chatMessages');
+                if (!messagesContainer) return;
+                
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typingIndicator';
+                typingDiv.innerHTML = `
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                `;
+                messagesContainer.appendChild(typingDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            function hideTypingIndicator() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+
+            // 채팅 입력 이벤트
+            const chatInput = document.getElementById('chatInput');
+            const chatClose = document.getElementById('chatClose');
+            const chatSend = document.getElementById('chatSend');
+
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+
+                chatInput.addEventListener('input', function() {
+                    this.style.height = 'auto';
+                    this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+                });
+            }
+
+            if (chatClose) {
+                chatClose.addEventListener('click', closeChat);
+            }
+
+            if (chatSend) {
+                chatSend.addEventListener('click', sendMessage);
+            }
+
+            // ESC 키로 채팅 닫기
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeChat();
+                }
+            });
+
+            // 스크롤 버튼
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 네비게이션 배경 변경
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (navbar) {
+                    if (window.scrollY > 50) {
+                        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                    } else {
+                        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
