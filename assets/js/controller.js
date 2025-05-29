@@ -3,6 +3,14 @@
  * test.html과 완전 호환되는 SPA + MVC 패턴 관리
  */
 
+// Message port 에러 처리
+window.addEventListener('error', function(e) {
+    if (e.message.includes('message port')) {
+        e.preventDefault();
+        return false;
+    }
+});
+
 class Controller {
     constructor() {
         this.initialized = false;
@@ -98,7 +106,7 @@ class Controller {
             const headerResponse = await fetch('components/header.html');
             if (headerResponse.ok) {
                 const headerHtml = await headerResponse.text();
-                const headerElement = document.getElementById('header-container'); // 수정: header -> header-container
+                const headerElement = document.getElementById('header-container'); // 수정됨
                 if (headerElement) {
                     headerElement.innerHTML = headerHtml;
                     console.log('헤더 로딩 완료');
@@ -118,7 +126,7 @@ class Controller {
             const footerResponse = await fetch('components/footer.html');
             if (footerResponse.ok) {
                 const footerHtml = await footerResponse.text();
-                const footerElement = document.getElementById('footer-container'); // 수정: footer -> footer-container
+                const footerElement = document.getElementById('footer-container'); // 수정됨
                 if (footerElement) {
                     footerElement.innerHTML = footerHtml;
                     console.log('푸터 로딩 완료');
@@ -215,6 +223,7 @@ class Controller {
         // 채팅 인터페이스가 이미 HTML에 있는지 확인
         const chatMessages = document.getElementById('chatMessages');
         const chatInput = document.getElementById('chatInput');
+        const sendButton = document.getElementById('chatSend'); // 수정: sendMessage -> chatSend
         
         if (!chatMessages || !chatInput) {
             console.warn('Chat Interface 구성 요소를 찾을 수 없습니다');
