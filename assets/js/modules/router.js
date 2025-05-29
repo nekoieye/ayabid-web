@@ -176,12 +176,20 @@ window.Router = {
      * 초기 라우트 처리
      */
     handleInitialRoute: function() {
+        // 해시가 비어있으면 기본값으로 'home' 사용
         const hash = window.location.hash.substring(1) || 'home';
-        this.navigate(hash, false); // 초기 로드시에는 탭 업데이트 스킵
+        
+        // 라우트가 존재하는지 확인하고 없으면 'home' 사용
+        const route = this.routes[hash] ? hash : 'home';
+        
+        console.log('초기 라우트 처리:', route);
+        this.navigate(route, false); // 초기 로드시에는 탭 업데이트 스킵
         
         // 초기 탭 상태 설정
         setTimeout(() => {
-            this.updateTabState(this.routes[hash]?.tab || 'home');
+            // 현재 라우트에 해당하는 탭을 찾아서 활성화
+            const tab = this.routes[route]?.tab || 'home';
+            this.updateTabState(tab);
         }, 100);
     },
 
@@ -198,6 +206,11 @@ window.Router = {
      */
     navigate: function(route, updateTab = true) {
         console.log('라우팅:', route);
+        
+        // 라우트가 없거나 빈 문자열이면 기본값 'home' 사용
+        if (!route || route === '') {
+            route = 'home';
+        }
         
         if (this.currentRoute === route) return;
         
@@ -216,19 +229,21 @@ window.Router = {
             hashParam = parts[1];
         }
         
-        // 라우트 존재 여부 확인
+        // 라우트 존재 여부 확인 - 없으면 'home'으로 대체하고 경고만 출력
         if (!this.routes[actualRoute]) {
-            console.warn('존재하지 않는 라우트:', actualRoute);
+            console.warn('존재하지 않는 라우트를 home으로 대체:', actualRoute);
             actualRoute = 'home';
         }
         
         this.previousRoute = this.currentRoute;
         this.currentRoute = actualRoute;
         
-        // 라우트 정보 가져오기 (안전한 접근)
+        // 라우트 정보 가져오기 (안전하게 처리)
         const routeInfo = this.routes[actualRoute];
         if (!routeInfo) {
-            console.error('라우트 정보를 찾을 수 없습니다:', actualRoute);
+            // 이 시점에서는 항상 routeInfo가 존재해야 함
+            console.error('심각한 오류: 라우트가 설정되지 않았습니다. 페이지를 새로고침합니다.');
+            setTimeout(() => location.reload(), 500);
             return;
         }
         
@@ -299,8 +314,8 @@ window.Router = {
             
             const html = await response.text();
             
-            // 빈 컴포넌트 감지 및 기본 콘텐츠 제공
-            if (!html.trim() || html.trim().length < 50) {
+            // 빈 컴포넌트 감지 기준 수정 - HTML이 완전히 비어있거나 최소 길이 미만인 경우만 디폴트 컨텐츠 사용
+            if (!html || !html.trim()) {
                 mainContent.innerHTML = this.getDefaultContent(route);
             } else {
                 mainContent.innerHTML = html;
@@ -316,7 +331,7 @@ window.Router = {
             
             // 이벤트 발생
             document.dispatchEvent(new CustomEvent('componentLoaded', { 
-                detail: { route, component: componentPath } 
+                detail: { route: route, file: componentPath } 
             }));
             
         } catch (error) {

@@ -293,6 +293,7 @@ const Sidebar = {
         }
     },
     
+    // 메뉴 항목 설정
     setupMenuItems: function() {
         // 요청된 컴포넌트들로 메뉴 구성
         this.addItem({
@@ -366,8 +367,8 @@ const Sidebar = {
         });
     },
     
+    // 사이드바 HTML 구조 생성
     createSidebarElements: function() {
-        // 사이드바 HTML 구조 생성
         const sidebarHtml = `
             <div class="sidebar" id="sidebar">
                 <div class="sidebar-header">
@@ -386,7 +387,15 @@ const Sidebar = {
         this.sidebarElement = document.getElementById('sidebar');
     },
     
+    // 토글 버튼 생성
     createToggleButton: function() {
+        // 메뉴 버튼 생성 비활성화 (요구사항에 따라 숨김)
+        console.log('사이드바 토글 버튼 생성이 비활성화되었습니다.');
+        
+        // 함수는 유지하되 버튼을 생성하지 않음
+        this.toggleBtn = null;
+        
+        /* 원래 코드 주석 처리
         // 토글 버튼 생성 (Tab Navigation 근처에 배치)
         const toggleButtonHtml = `
             <button class="sidebar-toggle-btn" id="sidebarToggle" title="메뉴">
@@ -404,8 +413,10 @@ const Sidebar = {
         }
         
         this.toggleBtn = document.getElementById('sidebarToggle');
+        */
     },
     
+    // 이벤트 바인딩
     bindEvents: function() {
         console.log('사이드바 이벤트 바인딩 중...');
         
@@ -444,11 +455,13 @@ const Sidebar = {
         console.log('사이드바 이벤트 바인딩 완료');
     },
     
+    // 사이드바 항목 추가
     addItem: function(item) {
         this.items.push(item);
         this.renderItems();
     },
     
+    // 사이드바 항목 렌더링
     renderItems: function() {
         const content = document.getElementById('sidebarContent');
         if (!content) return;
@@ -472,6 +485,7 @@ const Sidebar = {
         });
     },
     
+    // 사이드바 토글
     toggle: function() {
         console.log('사이드바 토글 실행');
         if (this.sidebarElement.classList.contains('active')) {
@@ -481,6 +495,7 @@ const Sidebar = {
         }
     },
     
+    // 사이드바 열기
     open: function() {
         console.log('사이드바 열기');
         if (this.sidebarElement) {
@@ -490,6 +505,7 @@ const Sidebar = {
         }
     },
     
+    // 사이드바 닫기
     close: function() {
         console.log('사이드바 닫기');
         if (this.sidebarElement) {
