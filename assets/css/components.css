@@ -18,7 +18,7 @@
     margin-right: 5px;
 }
 
-/* 카드 스타일들 */
+/* 제품별 카드 스타일들 */
 .excel-card, .web-card {
     background: white;
     border: 2px solid var(--primary-blue);
@@ -209,7 +209,6 @@
     transition: all 0.3s ease;
     overflow: hidden;
     position: relative;
-    border-radius: 10px;
 }
 
 .product-card:hover {
@@ -249,44 +248,6 @@
     color: #495057;
 }
 
-/* Service Card 스타일들 */
-.service-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service-card-image {
-    border-radius: 20px 20px 0 0;
-    margin-bottom: 0;
-}
-
-.service-card-content {
-    padding: 30px;
-}
-
-.service-card-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--primary-navy);
-    margin-bottom: 15px;
-}
-
-.service-card-description {
-    color: var(--text-light);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
 /* Progress Container 스타일 */
 .progress-container {
     position: fixed;
@@ -298,7 +259,7 @@
     z-index: 9999;
 }
 
-.progress-bar {
+.progress-container .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, var(--primary-blue), var(--primary-navy));
     width: 0%;
@@ -553,13 +514,13 @@
 }
 
 /* Fade In Animation */
-.fade-in {
+.components-fade-in {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
 }
 
-.fade-in.visible {
+.components-fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -602,12 +563,157 @@
     height: 300px;
 }
 
+/* 버튼 스타일 추가 */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+    border: none;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 58, 95, 0.4);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-navy) 100%);
+}
+
+.btn-outline-custom {
+    border: 2px solid var(--primary-navy);
+    color: var(--primary-navy);
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: transparent;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.btn-outline-custom:hover {
+    background: var(--primary-navy);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 58, 95, 0.3);
+}
+
+/* 채팅 인터페이스 추가 스타일 */
+.chat-input-container {
+    background: white;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.chat-input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chat-input {
+    flex: 1;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+    max-height: 120px;
+    min-height: 50px;
+}
+
+.chat-input:focus {
+    border-color: var(--primary-blue);
+}
+
+.chat-send {
+    background: var(--primary-blue);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-send:hover {
+    background: var(--primary-navy);
+    transform: scale(1.05);
+}
+
+.chat-send:disabled {
+    background: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 타이핑 인디케이터 개선 */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 20px;
+    background: var(--ai-msg);
+    border-radius: 20px;
+    border-bottom-left-radius: 5px;
+    max-width: 70%;
+    align-self: flex-start;
+    border: 1px solid #e0e0e0;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--text-light);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* 메시지 애니메이션 추가 */
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* 반응형 개선 */
 @media (max-width: 768px) {
     .tech-deep-card,
     .price-card,
-    .product-card,
-    .service-card {
+    .product-card {
         margin-bottom: 20px;
     }
     
@@ -627,10 +733,6 @@
     
     .price {
         font-size: 2.5rem;
-    }
-    
-    .service-card-content {
-        padding: 20px;
     }
     
     .sitemap-section {
@@ -663,10 +765,6 @@
         font-size: 1.2rem;
     }
     
-    .service-card-title {
-        font-size: 1.2rem;
-    }
-    
     .price-title {
         font-size: 1.3rem;
     }
@@ -692,7 +790,6 @@
 /* 접근성 개선 */
 .price-card:focus-within,
 .product-card:focus-within,
-.service-card:focus-within,
 .tech-deep-card:focus-within,
 .sitemap-section:focus-within {
     outline: 2px solid var(--primary-blue);
@@ -703,7 +800,6 @@
 @media print {
     .price-card,
     .product-card,
-    .service-card,
     .sitemap-section {
         break-inside: avoid;
         box-shadow: none;
